@@ -1,0 +1,101 @@
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/repo
+    description: The official CircleCI Ruby Docker image
+    machine:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        auth:
+          username: alexzakorko2015
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          DATABASE_NAME: book_store_test
+          DATABASE_USERNAME: book_store
+          DATABASE_PASSWORD: password
+          DATABASE_HOST: localhost
+          DATABASE_POST: "5432"
+      - image: circleci/postgres:11.1-alpine
+        environment:
+          POSTGRES_DB: book_store_test
+          POSTGRES_PASSWORD: password
+          POSTGRES_USER: book_store
+caches:
+  - &bundle_cache_full v6-repo-{{ checksum "Gemfile.lock" }}
+  - &bundle_cache v6-repo-
+  - &node_cache v1-repo-{{ checksum "yarn.lock" }}
+
+commands:
+  run_linters:
+    description: command to start linters
+    steps:
+      - run:
+          name: rubocop
+          command: bundle exec rubocop
+      - run:
+          name: fasterer
+          command: bundle exec fasterer
+
+  run_specs:
+    steps:
+      - run:
+          name: run specs
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            bundle exec rspec
+
+  setup_environment_ruby:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *bundle_cache_full
+            - *bundle_cache
+      - run: bundle install --path vendor/bundle
+      - run: sudo apt install -y postgresql-client || true
+      - run:
+          name: Database Setup
+          command: |
+            bundle exec rake db:create
+            bundle exec rake db:structure:load
+            bundle exec rake db:migrate
+      - save_cache:
+          key: *bundle_cache_full
+          paths:
+            - vendor/bundle
+
+  setup_environment_node:
+    steps:
+      - checkout
+      - restore_cache:
+          key: *node_cache
+      - run: npm install
+      - save_cache:
+          key: *node_cache
+          paths:
+            - node_modules
+
+jobs:
+  lintering:
+    executor: default
+    steps:
+      - setup_environment_ruby
+      - setup_environment_node
+      - run_linters
+  run_specs:
+    executor: default
+    steps:
+      - setup_environment_ruby
+      - setup_environment_node
+      - run_specs
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - lintering
+      - run_specs:
+          requires:
+            - lintering

@@ -41,3 +41,5 @@ yarn-debug.log*
 
 #jetbrains IDE
 .idea
+# Ignore application configuration
+/config/application.yml

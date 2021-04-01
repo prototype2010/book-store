@@ -1,0 +1,28 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+AllCops:
+  Exclude:
+   - 'bin/**/*'
+   - 'node_modules/**/*'
+   - 'db/schema.rb'
+   - 'db/seeds.rb'
+   - 'vendor/**/*'
+   - 'config/**/*'
+  TargetRubyVersion: 2.7.2
+  NewCops: enable
+
+Style/GlobalVars:
+  AllowedVariables: [$CFLAGS, $LIBS]
+
+Rails/FilePath:
+  Exclude:
+    - 'config/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
