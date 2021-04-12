@@ -75,5 +75,8 @@ gem 'figaro', '~> 1.2'
 
 gem 'bundler', '~> 2.1'
 
+gem 'rails-controller-testing', '~> 1.0'
 
-gem "rails-controller-testing", "~> 1.0"
+gem 'site_prism', '~> 3.7'
+
+gem 'simplecov', '~> 0.21.2'
