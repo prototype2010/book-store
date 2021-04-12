@@ -43,3 +43,6 @@ yarn-debug.log*
 .idea
 # Ignore application configuration
 /config/application.yml
+
+#rspec coverage
+coverage
