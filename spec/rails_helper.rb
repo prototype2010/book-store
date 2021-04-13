@@ -13,7 +13,7 @@ require 'site_prism'
 require 'site_prism/all_there'
 SitePrism.use_all_there_gem = true
 
-require 'support/pages/home_page'
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
