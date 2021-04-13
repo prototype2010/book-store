@@ -7,16 +7,16 @@ RSpec.describe 'Home Page', type: :feature do
   before { home_page.load }
 
   it 'has correct nav menu' do
-    expect(navbar).to have_content('Home')
-    expect(navbar).to have_content('Shop')
-    expect(navbar).to have_content('My account')
+    expect(navbar).to have_content(I18n.t('generic.home'))
+    expect(navbar).to have_content(I18n.t('generic.shop'))
+    expect(navbar).to have_content(I18n.t('nav.my_account'))
   end
 
   it 'hidden menu is shown after click' do
     home_page.navbar.click
 
-    expect(navbar).to have_content('Mobile development')
-    expect(navbar).to have_content('Photo')
-    expect(navbar).to have_content('Web design')
+    expect(navbar).to have_content(I18n.t('nav.mobile_development'))
+    expect(navbar).to have_content(I18n.t('nav.photo'))
+    expect(navbar).to have_content(I18n.t('nav.web_design'))
   end
 end
