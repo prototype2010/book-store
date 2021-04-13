@@ -6,12 +6,6 @@ require 'rspec/rails'
 require 'simplecov'
 SimpleCov.start 'rails'
 # SimpleCov.minimum_coverage 95
-require 'capybara'
-require 'capybara/rspec'
-require 'selenium-webdriver'
-require 'site_prism'
-require 'site_prism/all_there'
-SitePrism.use_all_there_gem = true
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
