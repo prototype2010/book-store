@@ -24,11 +24,15 @@
             %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}= t(:shop)
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
               %li
-                %a.collapse-link{href: "#"}= t('nav.mobile_development')
+                = link_to t('nav.all'),catalog_path(category: '')
               %li
-                %a.collapse-link{href: "#"}= t('nav.photo')
+                = link_to t('nav.mobile_development'),catalog_path(category: 'Mobile development')
               %li
-                %a.collapse-link{href: "#"}= t('nav.web_design')
+                = link_to t('nav.photo'), catalog_path(category: 'Photo')
+              %li
+                = link_to t('nav.web_design'), catalog_path(category: 'Web design')
+              %li
+                = link_to t('nav.web_development'), catalog_path(category: 'Web development')
           %li
             %a{href: "#"}= t('nav.my_account')
       .hidden-xs
@@ -39,11 +43,15 @@
             %a.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}= t(:shop)
             %ul.dropdown-menu
               %li
-                %a{href: "#"}= t('nav.mobile_development')
+                = link_to t('nav.all'),catalog_path(category: '')
               %li
-                %a{href: "#"}= t('nav.photo')
+                = link_to t('nav.mobile_development'),catalog_path(category: 'Mobile development')
               %li
-                %a{href: "#"}= t('nav.web_design')
+                = link_to t('nav.photo'), catalog_path(category: 'Photo')
+              %li
+                = link_to t('nav.web_design'), catalog_path(category: 'Web design')
+              %li
+                = link_to t('nav.web_development'), catalog_path(category: 'Web development')
               %li.divider{role: "separator"}
               %li
                 %a{href: "#"}= t('nav.log_out')

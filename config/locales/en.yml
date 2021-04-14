@@ -10,8 +10,10 @@ en:
     best_sellers: "Best Sellers"
   nav:
     mobile_development: "Mobile development"
+    all: "All"
     photo: "Photo"
     web_design: "Web design"
+    web_development: "Web development"
     my_account: "My account"
     log_out: "Log Out"
   footer:
