@@ -36,13 +36,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "books_categories", id: false, force: :cascade do |t|
-    t.bigint "book_id", null: false
-    t.bigint "category_id", null: false
-    t.index ["book_id"], name: "index_books_categories_on_book_id"
-    t.index ["category_id"], name: "index_books_categories_on_category_id"
+    t.bigint "category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -52,4 +46,5 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "books", "categories"
 end
