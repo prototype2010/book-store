@@ -8,29 +8,29 @@
           %i.fa.fa-angle-down.dropdown-icon.pull-right
         %ul.dropdown-menu
           %li
-            %a{href: "#"} Newest first
+            = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
           %li
-            %a{href: "#"} Popular first
+            = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
           %li
-            %a{href: "#"} Price: Low to hight
+            = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category]), class: 'filter-link'
           %li
-            %a{href: "#"} Price: Hight to low
+            = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category]), class: 'filter-link'
     %ul.list-inline.pt-10.mb-25.mr-240
       %li.mr-35
-        %a.filter-link{href: "#"}
-          All
+        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
+          = t('nav.all')
           %span.badge.general-badge 135
       %li.mr-35
-        %a.filter-link{href: "#"}
-          Mobile Development
+        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
+          = t('nav.mobile_development')
           %span.badge.general-badge 135
       %li.mr-35
-        %a.filter-link{href: "#"}
-          Photo
+        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Photo'), class: 'filter-link' do
+          = t('nav.photo')
           %span.badge.general-badge 135
       %li.mr-35
-        %a.filter-link{href: "#"}
-          Web Design
+        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Web design'), class: 'filter-link' do
+          = t('nav.web_design')
           %span.badge.general-badge 135
   .dropdowns.mb-25.visible-xs
     %p.lead.small.mb-10 Filter by category
@@ -40,13 +40,13 @@
         %i.fa.fa-angle-down.dropdown-icon.pull-right
       %ul.dropdown-menu
         %li
-          %a{href: "#"} Newest first
+          = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          %a{href: "#"} Popular first
+          = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          %a{href: "#"} Price: Low to hight
+          = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category])
         %li
-          %a{href: "#"} Price: Hight to low
+          = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category])
     %p.lead.small.mb-10 Sort by
     .dropdown
       %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
@@ -54,13 +54,13 @@
         %i.fa.fa-angle-down.dropdown-icon.pull-right
       %ul.dropdown-menu
         %li
-          %a{href: "#"} Newest first
+          = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          %a{href: "#"} Popular first
+          = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          %a{href: "#"} Price: Low to hight
+          = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category])
         %li
-          %a{href: "#"} Price: Hight to low
+          = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category])
   .mb-120
     .row
       .col-xs-6.col-sm-3

@@ -23,6 +23,9 @@ en:
   buttons:
     buy_now: "Buy Now"
     get_started: "Get Started"
-
-
-
+  catalog:
+    filters:
+      newest_first: "Newest first"
+      popular_first: "Popular first"
+      price_low_high: "Price: Low to high"
+      price_high_low: "Price: High to low"
