@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Home', type: :request do
+RSpec.describe 'Homes', type: :request do
   before do
     get root_path
   end

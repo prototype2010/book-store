@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Home Page', type: :feature do
-  let(:home_page) { HomePage.new }
+  let(:home_page) { HomesPage.new }
   let(:navbar) { home_page.navbar }
 
   before { home_page.load }
