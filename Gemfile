@@ -83,3 +83,5 @@ gem 'rails-controller-testing', '~> 1.0'
 gem 'site_prism', '~> 3.7'
 
 gem 'simplecov', '~> 0.21.2'
+
+gem "pagy", "~> 3.12"

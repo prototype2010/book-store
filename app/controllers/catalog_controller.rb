@@ -1,7 +1,7 @@
 class CatalogController < ApplicationController
   def index
-    x = search_params
-
+    @categories = Category.all
+    @pagy, @books = pagy(Book.all.order(created_at: :desc))
   end
 
   private
