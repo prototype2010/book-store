@@ -7,6 +7,11 @@ RSpec.describe 'Home Page', type: :feature do
 
   before { home_page.load }
 
+  it 'welcome message is seen' do
+    expect(home_page).to have_content(I18n.t('homes.index.welcome'))
+    expect(home_page).to have_content(I18n.t('homes.index.welcome_legend'))
+  end
+
   it 'has correct nav menu' do
     expect(navbar).to have_content(I18n.t('generic.home'))
     expect(navbar).to have_content(I18n.t('generic.shop'))
