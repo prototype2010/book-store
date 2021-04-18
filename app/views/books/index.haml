@@ -8,28 +8,28 @@
           %i.fa.fa-angle-down.dropdown-icon.pull-right
         %ul.dropdown-menu
           %li
-            = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
+            = link_to t('books.filters.newest_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
           %li
-            = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
+            = link_to t('books.filters.popular_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
           %li
-            = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category]), class: 'filter-link'
+            = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category]), class: 'filter-link'
           %li
-            = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category]), class: 'filter-link'
+            = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category]), class: 'filter-link'
     %ul.list-inline.pt-10.mb-25.mr-240
       %li.mr-35
-        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
+        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
           = t('nav.all')
           %span.badge.general-badge 135
       %li.mr-35
-        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
+        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
           = t('nav.mobile_development')
           %span.badge.general-badge 135
       %li.mr-35
-        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Photo'), class: 'filter-link' do
+        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Photo'), class: 'filter-link' do
           = t('nav.photo')
           %span.badge.general-badge 135
       %li.mr-35
-        = link_to catalog_path(sort: 'created_by', direction: 'DESC', category: 'Web design'), class: 'filter-link' do
+        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Web design'), class: 'filter-link' do
           = t('nav.web_design')
           %span.badge.general-badge 135
   .dropdowns.mb-25.visible-xs
@@ -40,13 +40,13 @@
         %i.fa.fa-angle-down.dropdown-icon.pull-right
       %ul.dropdown-menu
         %li
-          = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.newest_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.popular_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category])
+          = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category])
         %li
-          = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category])
     %p.lead.small.mb-10 Sort by
     .dropdown
       %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
@@ -54,13 +54,13 @@
         %i.fa.fa-angle-down.dropdown-icon.pull-right
       %ul.dropdown-menu
         %li
-          = link_to t('catalog.filters.newest_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.newest_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          = link_to t('catalog.filters.popular_first'), catalog_path(sort: 'created_by', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.popular_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category])
         %li
-          = link_to t('catalog.filters.price_low_high'), catalog_path(sort: 'price', direction: 'ASC', category: params[:category])
+          = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category])
         %li
-          = link_to t('catalog.filters.price_high_low'), catalog_path(sort: 'price', direction: 'DESC', category: params[:category])
+          = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category])
   .mb-120
     .row
     - @books.each do |book|
