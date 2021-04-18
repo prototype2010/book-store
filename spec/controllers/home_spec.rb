@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Home', type: :request do
-  before do
-    get root_path
-  end
+RSpec.describe HomesController, type: :controller do
+  before { get :index }
 
   it 'page responce successful' do
     expect(response).to be_successful
