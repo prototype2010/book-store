@@ -1,5 +1,5 @@
 class HomesPage < SitePrism::Page
-  set_url '/home'
+  set_url '/'
 
   element :navbar, '#navbar'
   element :footer, 'footer'
