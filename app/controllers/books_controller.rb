@@ -1,7 +1,13 @@
 class BooksController < ApplicationController
   def index
     @categories = Category.all
-    @pagy, @books = pagy(Book.all.order(created_at: :desc))
+
+    @pagy, @books = pagy(Book.all, link_extra: 'data-remote="true"')
+    #
+    respond_to do |format|
+      format.html
+      # format.js { render 'index.js.haml' }
+    end
   end
 
   private

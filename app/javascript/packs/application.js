@@ -6,11 +6,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import * as Pagy from './pagy'
 
 import $ from 'jquery';
 
 window.$ = $;
 window.jQuery = $;
+window.Pagy = Pagy;
 
 import 'bootstrap/dist/js/bootstrap'
 
@@ -22,3 +24,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import '../styles/applications.scss'
+
+window.addEventListener("turbolinks:load", Pagy.init);

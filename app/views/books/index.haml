@@ -61,7 +61,7 @@
           = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category])
         %li
           = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category])
-  .mb-120
+  .mb-120{id:"container"}
     .row
     - @books.each do |book|
       .col-xs-6.col-sm-3
@@ -80,5 +80,5 @@
           %span.divider-sm
           %p.lead.small= book.authors.map(&:name).join(', ')
     .text-center
-      = render partial: 'shared/pagination', locals: { pagy: @pagy }
-      %button.btn.btn-primary View More
+      = render partial: 'shared/nav_js'
+      -#%button.btn.btn-primary View More

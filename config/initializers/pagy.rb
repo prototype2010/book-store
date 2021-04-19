@@ -1,3 +1,6 @@
-# Instance variables
-# See https://ddnexus.github.io/pagy/api/pagy#instance-variables
+require 'pagy/extras/bootstrap'
+require 'pagy/extras/navs'
+require 'pagy/extras/countless'
+
+
 Pagy::VARS[:items] = 12
