@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
   enable_extension "plpgsql"
 
   create_table "authors", force: :cascade do |t|
-    t.string "name"
-    t.text "biography"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
