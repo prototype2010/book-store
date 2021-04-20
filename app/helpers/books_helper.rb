@@ -31,4 +31,7 @@ module BooksHelper
     string.nil? ? All.downcase : string.gsub(' ','_').underscore
   end
 
+  def selected_filter
+
+  end
 end

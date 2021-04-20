@@ -1,0 +1,9 @@
+%ul.dropdown-menu
+  %li
+    = link_to t('books.filters.newest_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
+  %li
+    = link_to t('books.filters.popular_first'), books_path(sort: 'created_by', direction: 'DESC', category: params[:category]), class: 'filter-link'
+  %li
+    = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category]), class: 'filter-link'
+  %li
+    = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category]), class: 'filter-link'
