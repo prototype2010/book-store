@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
   enable_extension "plpgsql"
 
   create_table "authors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,17 +30,18 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "photo_url"
-    t.string "title"
-    t.float "price"
-    t.text "description"
+    t.string "photo_url", null: false
+    t.string "title", null: false
+    t.float "price", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id"
+    t.bigint "category_id", null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.bigint "books_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

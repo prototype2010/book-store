@@ -3,7 +3,6 @@ class BooksController < ApplicationController
     @categories = Category.all
 
     @pagy, @books = pagy(Book.all, link_extra: 'data-remote="true"')
-    #
     respond_to do |format|
       format.html
       format.js { render 'index.js.haml', layout: false }

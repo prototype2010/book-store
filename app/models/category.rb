@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :books, counter_cache: true
+  has_many :books
 end
