@@ -15,23 +15,7 @@
             = link_to t('books.filters.price_low_high'), books_path(sort: 'price', direction: 'ASC', category: params[:category]), class: 'filter-link'
           %li
             = link_to t('books.filters.price_high_low'), books_path(sort: 'price', direction: 'DESC', category: params[:category]), class: 'filter-link'
-    %ul.list-inline.pt-10.mb-25.mr-240
-      %li.mr-35
-        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
-          = t('nav.all')
-          %span.badge.general-badge 135
-      %li.mr-35
-        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Mobile Development'), class: 'filter-link' do
-          = t('nav.mobile_development')
-          %span.badge.general-badge 135
-      %li.mr-35
-        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Photo'), class: 'filter-link' do
-          = t('nav.photo')
-          %span.badge.general-badge 135
-      %li.mr-35
-        = link_to books_path(sort: 'created_by', direction: 'DESC', category: 'Web design'), class: 'filter-link' do
-          = t('nav.web_design')
-          %span.badge.general-badge 135
+  = render 'categories'
   .dropdowns.mb-25.visible-xs
     %p.lead.small.mb-10 Filter by category
     .dropdown
