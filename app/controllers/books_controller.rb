@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     #
     respond_to do |format|
       format.html
-      # format.js { render 'index.js.haml' }
+      format.js { render 'index.js.haml', layout: false }
     end
   end
 
