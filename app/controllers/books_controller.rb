@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  include SortHelper
+
   def index
     @categories = Category.all
 

@@ -1,5 +1,6 @@
 module BooksHelper
-  All = 'All'
+  include SortHelper
+  ALL = 'All'
 
   def book_authors(book)
     book.authors
@@ -22,16 +23,12 @@ module BooksHelper
 
     categories.unshift({
                   name: nil,
-                  display_name: All,
+                  display_name: ALL,
                   books_count: total_books
                 })
   end
 
   def to_i18_key(string)
-    string.nil? ? All.downcase : string.gsub(' ','_').underscore
-  end
-
-  def selected_filter
-
+    string.nil? ? ALL.downcase : string.gsub(' ','_').underscore
   end
 end
