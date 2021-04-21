@@ -17,14 +17,10 @@ module BooksHelper
       }
     end
 
-    total_books = categories
-                    .map { |category| category[:books_count] }
-                    .sum
-
     categories.unshift({
                   name: nil,
                   display_name: ALL,
-                  books_count: total_books
+                  books_count: books_sum(categories)
                 })
   end
 
@@ -32,5 +28,13 @@ module BooksHelper
     return ALL.downcase if string.nil?
 
     string.gsub(' ','_').underscore
+  end
+
+  private
+
+  def books_sum(categories)
+    categories
+      .map { |category| category[:books_count] }
+      .sum
   end
 end
