@@ -11,6 +11,15 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    @book = Book.find(params[:id])
+
+    unless @book
+      flash[:notice] = 'Book not found'
+      redirect_to(:index)
+    end
+  end
+
   private
 
   def search_params

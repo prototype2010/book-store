@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root "homes#index"
-  get '/books', to: "books#index"
+  resources :books, only: [:index, :show]
 end
