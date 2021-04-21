@@ -2,6 +2,6 @@
   = sort_details(params[:sort])[:display_text]
   %i.fa.fa-angle-down.dropdown-icon.pull-right
 %ul.dropdown-menu
-  -SortHelper::BOOKS_SORT.entries.each do |sort_key, details|
+  -SortHelper::BOOKS_SORT.keys.each do |key|
     %li
-      = link_to t(".#{sort_key}"), books_path(sort: sort_key,  category: params[:category]), class: 'filter-link'
+      = link_to t(".#{key}"), books_path(sort: key,  category: params[:category]), class: 'filter-link'

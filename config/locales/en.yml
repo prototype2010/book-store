@@ -25,6 +25,10 @@ en:
     buy_now: "Buy Now"
     get_started: "Get Started"
   books:
+    index:
+      catalog: 'Сatalog'
+      filter_by_category: 'Filter by category'
+      sort_by: 'Sort by'
     filters:
       newest_first: "Newest first"
       popular_first: "Popular first"
