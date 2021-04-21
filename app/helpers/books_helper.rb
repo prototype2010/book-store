@@ -29,6 +29,8 @@ module BooksHelper
   end
 
   def to_i18_key(string)
-    string.nil? ? ALL.downcase : string.gsub(' ','_').underscore
+    return ALL.downcase if string.nil?
+
+    string.gsub(' ','_').underscore
   end
 end
