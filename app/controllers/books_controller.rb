@@ -3,8 +3,8 @@ class BooksController < ApplicationController
 
   def index
     @categories = Category.all
-
-    books = Book.by_category(params[:category]).use_sort(sort_details(params[:sort]))
+    books = Book.by_category(params[:category])
+                .use_sort(sort_details(params[:sort]))
     @pagy, @books = pagy(books, link_extra: 'data-remote="true"')
 
     respond_to do |format|

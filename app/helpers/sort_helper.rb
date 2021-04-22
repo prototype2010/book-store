@@ -1,10 +1,10 @@
 module SortHelper
   DEFAULT_SORT = 'newest_first'
   BOOKS_SORT = {
-    newest_first: {sort: 'created_at', direction: 'ASC', display_text: "Newest first"},
-    popular_first: {sort: 'created_at', direction: 'DESC', display_text: "Popular first"},
-    price_low_high: {sort: 'price', direction: 'ASC', display_text: "Price: Low to high"},
-    price_high_low: {sort: 'price', direction: 'DESC', display_text: "Price: High to low"},
+    newest_first: {sort: 'created_at', direction: 'ASC', display_text: I18n.t('books.filters.newest_first')},
+    popular_first: {sort: 'created_at', direction: 'DESC', display_text: I18n.t('books.filters.popular_first')},
+    price_low_high: {sort: 'price', direction: 'ASC', display_text: I18n.t('books.filters.price_low_high')},
+    price_high_low: {sort: 'price', direction: 'DESC', display_text: I18n.t('books.filters.price_high_low')},
   }
 
   def default_sort
