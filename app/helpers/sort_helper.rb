@@ -11,10 +11,12 @@ module SortHelper
     BOOKS_SORT[DEFAULT_SORT.to_sym]
   end
 
-  def sort_details(sort = DEFAULT_SORT)
-    sort_type = sort.nil? ? DEFAULT_SORT : sort
-    return default_sort unless BOOKS_SORT.key?(sort_type.to_sym)
+  def sort_details(sort)
+    sort = sort.nil? ? DEFAULT_SORT : sort
+    sort_sym = sort.to_sym
 
-    BOOKS_SORT[sort_type.to_sym]
+    return default_sort unless BOOKS_SORT.key?(sort_sym)
+
+    BOOKS_SORT[sort_sym]
   end
 end

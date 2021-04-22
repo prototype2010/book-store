@@ -4,7 +4,9 @@ class BooksController < ApplicationController
   def index
     @categories = Category.all
 
-    @pagy, @books = pagy(Book.all, link_extra: 'data-remote="true"')
+    books = Book.by_category(params[:category]).use_sort(sort_details(params[:sort]))
+    @pagy, @books = pagy(books, link_extra: 'data-remote="true"')
+
     respond_to do |format|
       format.html
       format.js { render 'index.js.haml', layout: false }
@@ -23,6 +25,6 @@ class BooksController < ApplicationController
   private
 
   def search_params
-    params.permit(:category, :sort, :direction)
+    params.permit(:category, :sort)
   end
 end
