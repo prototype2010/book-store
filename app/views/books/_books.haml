@@ -8,7 +8,7 @@
             .thumb-hover
               .general-thumb-link-wrap
                 = link_to book_path(book), class: "thumb-hover-link" do
-                  %i.fa.fa-eye.thumb-icon.pt-10{'aria-hidden': "true"}
+                  %i.fa.fa-eye.thumb-icon.pt-10{'aria-hidden': "true", id: "show-#{book.id}"}
                 %a.thumb-hover-link{href: "", onclick: "$(this).siblings('form').submit()"}
                   %i.fa.fa-shopping-cart.thumb-icon.pt-10
         .general-thumb-info

@@ -1,6 +1,6 @@
 %ul.list-inline.pt-10.mb-25.mr-240
   -books_categories.each do |category|
-    %li.mr-35
+    %li.mr-35{id: 'categories'}
       = link_to books_path(sort: params[:sort], category: category[:name]), class: 'filter-link' do
         = t('nav.' + to_i18_key(category[:display_name]))
         %span.badge.general-badge=category[:books_count]
