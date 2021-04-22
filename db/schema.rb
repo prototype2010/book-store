@@ -30,10 +30,15 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "photo_url", null: false
     t.string "title", null: false
     t.float "price", null: false
     t.text "description", null: false
+    t.float "width", null: false
+    t.float "height", null: false
+    t.float "length", null: false
+    t.datetime "publish_year", null: false
+    t.string "images", null: false, array: true
+    t.string "materials", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false

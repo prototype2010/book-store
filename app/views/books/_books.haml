@@ -4,7 +4,7 @@
       .col-xs-6.col-sm-3
         .general-thumb-wrap
           .thumbnail.general-thumbnail
-            = image_tag(book.photo_url, class: "img-shadow general-thumbnail-img", alt: book.title)
+            = image_tag(book.images.first, class: "img-shadow general-thumbnail-img", alt: book.title)
             .thumb-hover
               .general-thumb-link-wrap
                 = link_to book_path(book), class: "thumb-hover-link" do

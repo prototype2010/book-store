@@ -30,6 +30,10 @@ module BooksHelper
     string.gsub(' ','_').underscore
   end
 
+  def book_measurements(book)
+    "H:#{book.height}\" x W: #{book.width}\" x D: #{book.length}"
+  end
+
   private
 
   def books_sum(categories)
