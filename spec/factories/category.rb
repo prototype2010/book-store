@@ -3,5 +3,3 @@ FactoryBot.define do
     name { FFaker::Name.name }
   end
 end
-
-

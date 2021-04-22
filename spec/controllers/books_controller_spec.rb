@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Books", type: :request do
+RSpec.describe 'Books', type: :request do
   describe '#index' do
     before { get books_path }
 
@@ -15,6 +15,7 @@ RSpec.describe "Books", type: :request do
 
   describe '#show' do
     let(:book) { FactoryBot.create(:book) }
+
     before { get book_path(book) }
 
     it 'books responce successful' do

@@ -1,11 +1,11 @@
 module SortHelper
-  DEFAULT_SORT = 'newest_first'
+  DEFAULT_SORT = 'newest_first'.freeze
   BOOKS_SORT = {
-    newest_first: {sort: 'created_at', direction: 'ASC', display_text: I18n.t('books.filters.newest_first')},
-    popular_first: {sort: 'created_at', direction: 'DESC', display_text: I18n.t('books.filters.popular_first')},
-    price_low_high: {sort: 'price', direction: 'ASC', display_text: I18n.t('books.filters.price_low_high')},
-    price_high_low: {sort: 'price', direction: 'DESC', display_text: I18n.t('books.filters.price_high_low')},
-  }
+    newest_first: { sort: 'created_at', direction: 'ASC', display_text: I18n.t('books.filters.newest_first') },
+    popular_first: { sort: 'created_at', direction: 'DESC', display_text: I18n.t('books.filters.popular_first') },
+    price_low_high: { sort: 'price', direction: 'ASC', display_text: I18n.t('books.filters.price_low_high') },
+    price_high_low: { sort: 'price', direction: 'DESC', display_text: I18n.t('books.filters.price_high_low') }
+  }.freeze
 
   def default_sort
     BOOKS_SORT[DEFAULT_SORT.to_sym]

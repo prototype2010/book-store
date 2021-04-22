@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.float :height, null: false
       t.float :length, null: false
       t.timestamp :publish_year, null: false
-      t.string :images, array: true,  null: false
+      t.string :images, array: true, null: false
       t.string :materials, null: false
 
       t.timestamps

@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_132148) do
     t.string "materials", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
   end
 
   create_table "categories", force: :cascade do |t|

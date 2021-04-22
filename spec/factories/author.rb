@@ -4,5 +4,3 @@ FactoryBot.define do
     last_name { FFaker::Name.last_name }
   end
 end
-
-

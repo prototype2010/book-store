@@ -1,15 +1,14 @@
+MAX_PRICE = 100.0
+MAX_LENGTH = 40.0
+MAX_WIDTH = 20.0
+MAX_HEIGHT = 5.0
+PRICE_DECIMALS = 2
+MEASUREMENTS_DECIMALS = 1
+IMAGES_COUNT = 4
+
 FactoryBot.define do
-  MAX_PRICE = 100.0
-  MAX_LENGTH = 40.0
-  MAX_WIDTH = 20.0
-  MAX_HEIGHT = 5.0
-
-  PRICE_DECIMALS = 2
-  MEASUREMENTS_DECIMALS = 1
-  IMAGES_COUNT = 4
-
   factory :book do
-    images { Array.new(IMAGES_COUNT){FFaker::Image.url} }
+    images { Array.new(IMAGES_COUNT) { FFaker::Image.url } }
     title { FFaker::Name.name }
     materials { FFaker::Name.name }
     publish_year { FFaker::Time.date }
@@ -19,6 +18,6 @@ FactoryBot.define do
     height { FFaker::Random.rand(MAX_HEIGHT).floor(MEASUREMENTS_DECIMALS) }
     description { FFaker::BaconIpsum.sentence }
     category { create(:category) }
-    authors { [ create(:author) ] }
+    authors { [create(:author)] }
   end
 end

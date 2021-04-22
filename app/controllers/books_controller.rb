@@ -14,12 +14,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find_by(id: params[:id])
 
-    unless @book
-      flash[:notice] = 'Book not found'
-      redirect_to(:index)
-    end
+    return if @book
+
+    flash[:notice] = 'Book not found'
+    redirect_to(books_path)
   end
 
   private

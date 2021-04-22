@@ -1,6 +1,6 @@
 module BooksHelper
   include SortHelper
-  ALL = 'All'
+  ALL = 'All'.freeze
 
   def book_authors(book)
     book.authors
@@ -18,16 +18,16 @@ module BooksHelper
     end
 
     categories.unshift({
-                  name: nil,
-                  display_name: ALL,
-                  books_count: books_sum(categories)
-                })
+                         name: nil,
+                         display_name: ALL,
+                         books_count: books_sum(categories)
+                       })
   end
 
   def to_i18_key(string)
     return ALL.downcase if string.nil?
 
-    string.gsub(' ','_').underscore
+    string.tr(' ', '_').underscore
   end
 
   def book_measurements(book)
@@ -38,7 +38,7 @@ module BooksHelper
 
   def books_sum(categories)
     categories
-      .map { |category| category[:books_count] }
+      .pluck(:books_count)
       .sum
   end
 end
